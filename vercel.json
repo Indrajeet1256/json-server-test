@@ -6,7 +6,7 @@
             "use": "@vercel/node",
             "config": {
                 "includeFiles": [
-                    "db/db.json"
+                    "books/books.json"
                 ]
             }
         }
