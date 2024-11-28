@@ -1,8 +1,13 @@
 // JSON Server module
 const jsonServer = require("json-server");
 const server = jsonServer.create();
-const router = jsonServer.router("books/books.json");
 const middlewares = jsonServer.defaults();
+const fs = require("fs");
+
+const db = JSON.parse(
+	fs.readFileSync(path.join(__dirname, "books/books.json"))
+);
+const router = jsonServer.router(db);
 
 server.use(middlewares);
 // Add this before server.use(router)
